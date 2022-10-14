@@ -19,7 +19,7 @@ sudo $DIR/templates/install-caps-to-esc.sh INSTALL_CMD="$PACMAN_INSTALL"
 sudo $PACMAN_INSTALL chezmoi
 
 ### Setup chezmoi, pull and apply the dotfiles
-chezmoi init --apply --ssh le-quentin
+chezmoi init --apply --force --ssh le-quentin
 
 ### Load the new fancy config!
 source ~/.zshrc
