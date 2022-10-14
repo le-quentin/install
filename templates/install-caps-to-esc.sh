@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# Install caps2esc on a fedora system, and enable the demon
+# Install caps2esc, and enable the demon
 # This is a service that will replace capslock key with an escape key/ctrl key when you hold
 
-#Exit on any command fail
+# Exit on any command fail
 set -e
 
-#Snippet to parse named args
+# Snippet to parse named args
 for ARGUMENT in "$@"
 do
    KEY=$(echo $ARGUMENT | cut -f1 -d=)
