@@ -21,6 +21,6 @@ sudo $PACMAN_INSTALL chezmoi
 ### Setup chezmoi, pull and apply the dotfiles
 chezmoi init --apply --ssh le-quentin
 
-
-
+### Load the new fancy config!
+source ~/.zshrc
 
