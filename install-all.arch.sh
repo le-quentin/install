@@ -21,6 +21,10 @@ sudo $PACMAN_INSTALL chezmoi
 ### Setup chezmoi, pull and apply the dotfiles
 chezmoi init --apply --force --ssh le-quentin
 
-### Load the new fancy config!
-source ~/.zshrc
+# Vim and terminal config
+$DIR/common/setup-terminal-and-vim.sh
+
+### Change the shell and ask for relogin
+chsh -s /usr/bin/zsh
+echo "Your default shell has been changed, please login again."
 
