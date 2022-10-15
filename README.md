@@ -12,6 +12,7 @@ Those will be a starting point, because of course I will adjust config along the
 [ ] - fix tmux-powerline with a proper look (look at themes)
 [ ] - selected tmux-pane is circled (instead of the ugly "pane*")
 [ ] - pretty terminal (pretty colors, a lil opacity ? Again... look at themes)
+[ ] - Test zoom, meet, slack, all with screenshare
 [ ] - vim improvements : fix git plugin (commands, +/- next to the line numbers...)
 [ ] - check tmux still preserve history on ungraceful exit
 [ ] - test: fresh install on manjaro i3 or minimal 
