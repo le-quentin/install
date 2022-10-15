@@ -21,6 +21,6 @@ $INSTALL_CMD i3-gaps libxcursor \
    autorandr \
    picom \
    network-manager-applet volumeicon pavucontrol \
-   xfce4-battery-plugin xfce4-keyboard-settings \
+   xfce4-battery-plugin manjaro-settings-manager manjaro-settings-manager-notifier \
    conky conky-i3 \
    thunar
