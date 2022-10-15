@@ -17,11 +17,15 @@ do
    export "$KEY"="$VALUE"
 done
 
-$INSTALL_CMD i3-gaps libxcursor \
+$INSTALL_CMD i3-gaps libXcursor \
    autorandr \
    picom \
    network-manager-applet volumeicon pavucontrol \
-   xfce4-battery-plugin manjaro-settings-manager manjaro-settings-manager-notifier \
+   xfce4-power-manager xfce4-battery-plugin \
    polkit-gnome \
-   conky conky-i3 \
+   conky \
    thunar
+
+# Some packages are available only on arch distros ; defaulting to other (or none) for those
+$INSTALL_CMD manjaro-settings-manager manjaro-settings-manager-notifier 2>/dev/null || $INSTALL_CMD xfce4-settings
+$INSTALL_CMD conky-i3 2>/dev/null || true
