@@ -18,6 +18,7 @@ do
 done
 
 $INSTALL_CMD i3-gaps libxcursor \
+   autorandr \
    picom \
    network-manager-applet volumeicon pavucontrol \
    xfce4-battery-plugin xfce4-keyboard-settings \
