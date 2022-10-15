@@ -7,6 +7,7 @@ Those will be a starting point, because of course I will adjust config along the
 
 [ ] - i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug)
 [ ] - replace dmenu with rofi (opening windows and desktop apps + add a kickass theme)
+[ ] - notification applet with "do not disturb" mode
 [ ] - pretty status bar (look at polybar and polybar themes)
 [ ] - fix tmux-powerline with a proper look (look at themes)
 [ ] - selected tmux-pane is circled (instead of the ugly "pane*")
