@@ -17,7 +17,7 @@ do
    export "$KEY"="$VALUE"
 done
 
-$INSTALL_CMD i3-gaps libXcursor \
+$INSTALL_CMD i3-gaps \
    autorandr \
    picom \
    network-manager-applet volumeicon pavucontrol \
@@ -27,5 +27,6 @@ $INSTALL_CMD i3-gaps libXcursor \
    thunar
 
 # Some packages are available only on arch distros ; defaulting to other (or none) for those
+$INSTALL_CMD libxcursor 2>/dev/null || $INSTALL_CMD libXcursor
 $INSTALL_CMD manjaro-settings-manager manjaro-settings-manager-notifier 2>/dev/null || $INSTALL_CMD xfce4-settings
 $INSTALL_CMD conky-i3 2>/dev/null || true
