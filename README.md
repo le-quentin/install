@@ -24,7 +24,7 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
 
-- [ ] i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug)
+- [x] i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug) => 1-5 on external, 6-8 on laptop screen
 - [ ] replace dmenu with rofi (opening windows and desktop apps + add a kickass theme)
 - [ ] notification applet with "do not disturb" mode
 - [ ] pretty status bar (look at polybar and polybar themes)
