@@ -20,7 +20,7 @@ done
 $INSTALL_CMD i3-gaps \
    autorandr \
    picom \
-   network-manager-applet volumeicon pavucontrol \
+   network-manager-applet volumeicon pavucontrol pulseaudio \
    xfce4-power-manager xfce4-battery-plugin \
    polkit-gnome \
    conky \
