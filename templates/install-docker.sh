@@ -15,6 +15,6 @@ do
 done
 
 # Install docker and set it up to run without sudo
-$INSTALL_CMD docker
+$INSTALL_CMD docker docker-compose
 systemctl enable docker --now
 usermod -aG docker $USER
