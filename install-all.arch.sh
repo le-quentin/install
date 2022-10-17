@@ -9,6 +9,7 @@ PACMAN_INSTALL="pacman -Syu --noconfirm --needed"
 
 # Install everything
 sudo $DIR/templates/install-common-dependencies.sh INSTALL_CMD="$PACMAN_INSTALL"
+sudo $DIR/templates/install-docker.sh INSTALL_CMD="$PACMAN_INSTALL"
 sudo $DIR/common/install-fonts.sh
 sudo $DIR/common/save-tmux-zsh-histories-on-shutdown.sh
 sudo $DIR/templates/install-caps-to-esc.sh INSTALL_CMD="$PACMAN_INSTALL"
