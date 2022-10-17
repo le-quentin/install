@@ -31,3 +31,11 @@ $INSTALL_CMD i3-gaps \
 $INSTALL_CMD libxcursor 2>/dev/null || $INSTALL_CMD libXcursor
 $INSTALL_CMD manjaro-settings-manager manjaro-settings-manager-notifier 2>/dev/null || $INSTALL_CMD xfce4-settings
 $INSTALL_CMD conky-i3 2>/dev/null || true
+
+# Rofi themes
+cd ~
+rm -rf ./.rofi-themes 2>/dev/null || true
+git clone --depth=1 https://github.com/adi1090x/rofi.git .rofi-themes 
+cd .rofi-themes
+chmod +x setup.sh
+./setup.sh
