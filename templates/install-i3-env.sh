@@ -24,7 +24,8 @@ $INSTALL_CMD i3-gaps \
    xfce4-power-manager xfce4-battery-plugin \
    polkit-gnome \
    conky \
-   thunar
+   thunar \
+   rofi
 
 # Some packages are available only on arch distros ; defaulting to other (or none) for those
 $INSTALL_CMD libxcursor 2>/dev/null || $INSTALL_CMD libXcursor
