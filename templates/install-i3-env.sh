@@ -40,3 +40,11 @@ git clone --depth=1 https://github.com/adi1090x/rofi.git .rofi-themes
 cd .rofi-themes
 chmod +x setup.sh
 ./setup.sh
+
+# Polybar themes
+cd ~
+rm -rf ./.polybar-themes 2>/dev/null || true
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git .polybar-themes
+cd .polybar-themes
+chmod +x setup.sh
+./setup.sh
