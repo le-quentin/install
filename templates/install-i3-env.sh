@@ -48,3 +48,11 @@ git clone --depth=1 https://github.com/adi1090x/polybar-themes.git .polybar-them
 cd .polybar-themes
 chmod +x setup.sh
 ./setup.sh
+
+# I3wsr, to dynamically rename workspaces depending on their content
+$INSTALL_CMD libxcb rust
+cd /tmp
+git clone https://github.com/roosta/i3wsr.git 
+cd i3wsr
+cargo build --release
+cp target/release/i3wsr /usr/local/bin/i3wsr
