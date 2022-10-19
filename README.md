@@ -25,9 +25,10 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
 
 - [x] i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug) => 1-5 on external, 6-8 on laptop screen
-- [ ] replace dmenu with rofi (opening windows and desktop apps + add a kickass theme)
+- [x] replace dmenu with rofi (opening windows and desktop apps + add a kickass theme)
 - [ ] notification applet with "do not disturb" mode
-- [ ] pretty status bar (look at polybar and polybar themes)
+- [x] pretty status bar (look at polybar and polybar themes)
+- [ ] polybar (or whole i3?) reloads on hdmi plug/unplug
 - [ ] fix tmux-powerline with a proper look (look at themes)
 - [ ] selected tmux-pane is circled (instead of the ugly "pane\*")
 - [ ] pretty terminal (pretty colors, a lil opacity ? Again... look at themes)
