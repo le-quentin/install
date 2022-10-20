@@ -27,7 +27,7 @@ Those will be a starting point, because of course I will adjust config along the
 - [ ] replace various git pulls with zipped sources so I get a reliable version of deps
 - [x] i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug) => 1-5 on external, 6-8 on laptop screen
 - [x] replace dmenu with rofi (opening windows and desktop apps + add a kickass theme)
-- [ ] notification applet with "do not disturb" mode
+- [x] notification applet with "do not disturb" mode => did it with a custom module, display left of the system tray
 - [x] pretty status bar (look at polybar and polybar themes)
 - [ ] polybar (or whole i3?) reloads on hdmi plug/unplug
 - [ ] fix tmux-powerline with a proper look (look at themes)
