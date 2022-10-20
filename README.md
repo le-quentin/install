@@ -25,16 +25,19 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
 
 - [ ] replace various git pulls with zipped sources so I get a reliable version of deps
+- [ ] clean up to keep only what I need 
 - [x] i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug) => 1-5 on external, 6-8 on laptop screen
 - [x] replace dmenu with rofi (opening windows and desktop apps + add a kickass theme)
 - [x] notification applet with "do not disturb" mode => did it with a custom module, display left of the system tray
 - [x] pretty status bar (look at polybar and polybar themes)
 - [ ] polybar (or whole i3?) reloads on hdmi plug/unplug
-- [ ] fix tmux-powerline with a proper look (look at themes)
-- [ ] selected tmux-pane is circled (instead of the ugly "pane\*")
-- [ ] pretty terminal (pretty colors, a lil opacity ? Again... look at themes)
+- [x] fix tmux-powerline with a proper look (look at themes)
+- [ ] fix tmux-powerline separators to the center section having the wrong colour (center front instead of current segment back)
+- [x] selected tmux-pane is circled (instead of the ugly "pane\*")
+- [x] pretty terminal (pretty colors, a lil opacity ? Again... look at themes)
 - [ ] Test zoom, meet, slack, all with screenshare
 - [ ] vim improvements : fix git plugin (commands, +/- next to the line numbers...)
+- [ ] vim improvements : better airline theme (match with terminal palette)
 - [ ] check tmux still preserve history on ungraceful exit
 - [ ] test: fresh install on manjaro i3 or minimal 
 - [ ] test: fresh install on EndeavourOs (minimal edition ?)
