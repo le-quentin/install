@@ -24,6 +24,11 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
 
+- [ ] rework theme scripts into a proper "omnitheme" project (Python? Rust? Go?), because this is becoming bigger than expected
+- [ ] pick better colours for tmux-powerline and experiment with a few themes
+- [ ] themes parametered with primary/secondary colors? Look into design good practices
+- [ ] Add gtk2/gtk3 exports to the "omnitheme" project
+- [ ] IntelliJ exports? 
 - [ ] replace various git pulls with zipped sources so I get a reliable version of deps
 - [ ] clean up to keep only what I need 
 - [x] i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug) => 1-5 on external, 6-8 on laptop screen
