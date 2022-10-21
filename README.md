@@ -27,6 +27,7 @@ Those will be a starting point, because of course I will adjust config along the
 - [ ] rework theme scripts into a proper "omnitheme" project (Python? Rust? Go?), because this is becoming bigger than expected
 - [ ] pick better colours for tmux-powerline and experiment with a few themes
 - [ ] themes parametered with primary/secondary colors? Look into design good practices
+- [ ] separate parameters for the bar so that it sticks out more? 
 - [ ] Add gtk2/gtk3 exports to the "omnitheme" project
 - [ ] IntelliJ exports? 
 - [ ] replace various git pulls with zipped sources so I get a reliable version of deps
