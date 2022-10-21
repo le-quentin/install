@@ -26,7 +26,8 @@ $INSTALL_CMD i3-gaps \
    conky \
    thunar \
    rofi \
-   polybar
+   polybar \
+   redshift
 
 # Some packages are available only on arch distros ; defaulting to other (or none) for those
 $INSTALL_CMD libxcursor 2>/dev/null || $INSTALL_CMD libXcursor
