@@ -35,6 +35,7 @@ Those will be a starting point, because of course I will adjust config along the
 - [ ] fix tmux-powerline separators to the center section having the wrong colour (center front instead of current segment back)
 - [x] selected tmux-pane is circled (instead of the ugly "pane\*")
 - [x] pretty terminal (pretty colors, a lil opacity ? Again... look at themes)
+- [ ] Fix conky: adapt to screen size, get rid of irrelevant help (or replace with personal stickies?)
 - [ ] Test zoom, meet, slack, all with screenshare
 - [ ] vim improvements : fix git plugin (commands, +/- next to the line numbers...)
 - [ ] vim improvements : better airline theme (match with terminal palette)
