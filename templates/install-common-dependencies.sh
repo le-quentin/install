@@ -20,5 +20,6 @@ echo $INSTALL_CMD
 $INSTALL_CMD \
 	make cmake gcc nodejs `# General dev/build deps`\
 	alacritty zsh tmux gvim fzf xsel `# Terminal`\
+	python python-pip`# Python env for scripting`\
 	systemd `#systemd: some stuff like machinectl might be missing`\
 	thunar `# File manager`
