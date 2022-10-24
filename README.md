@@ -25,8 +25,8 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
 
 - [ ] rework theme scripts into a proper "omnitheme" project (Python? Rust? Go?), because this is becoming bigger than expected
-- [ ] pick better colours for tmux-powerline and experiment with a few themes
-- [ ] themes parametered with primary/secondary colors? Look into design good practices
+- [x] pick better colours for tmux-powerline and experiment with a few themes
+- [x] themes parametered with primary/secondary colors? Look into design good practices
 - [ ] separate parameters for the bar so that it sticks out more? 
 - [ ] Add gtk2/gtk3 exports to the "omnitheme" project
 - [ ] IntelliJ exports? 
@@ -38,13 +38,15 @@ Those will be a starting point, because of course I will adjust config along the
 - [x] pretty status bar (look at polybar and polybar themes)
 - [ ] polybar (or whole i3?) reloads on hdmi plug/unplug
 - [x] fix tmux-powerline with a proper look (look at themes)
-- [ ] fix tmux-powerline separators to the center section having the wrong colour (center front instead of current segment back)
+- [x] fix tmux-powerline separators to the center section having the wrong colour (center front instead of current segment back)
 - [x] selected tmux-pane is circled (instead of the ugly "pane\*")
 - [x] pretty terminal (pretty colors, a lil opacity ? Again... look at themes)
 - [ ] Fix conky: adapt to screen size, get rid of irrelevant help (or replace with personal stickies?)
 - [ ] Test zoom, meet, slack, all with screenshare
-- [ ] vim improvements : fix git plugin (commands, +/- next to the line numbers...)
+- [x] vim improvements : fix git plugin (commands, +/- next to the line numbers...)
 - [ ] vim improvements : better airline theme (match with terminal palette)
+- [ ] vim ide : java LSP setup
+- [ ] Try nvim ?
 - [ ] check tmux still preserve history on ungraceful exit
 - [ ] test: fresh install on manjaro i3 or minimal 
 - [ ] test: fresh install on EndeavourOs (minimal edition ?)
