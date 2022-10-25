@@ -69,3 +69,9 @@ Run the relevant script, i.e. for arch distros:
 ```sh
 ./install-all.arch.sh
 ```
+
+### Manual setup after install
+
+First, reboot.
+
+If on arch, Dropbox was installed. Run it from rofi, it should appear in system tray. Set it to launch at startup, and sign in (it will open palemoon. Just sign in in firefox then paste the palemoon link in firefox to link the laptop). It should start syncing. You can find the files in ~/Dropbox. Open Thunar and add it to the quickbar on the left.

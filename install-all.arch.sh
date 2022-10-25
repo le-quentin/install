@@ -28,6 +28,9 @@ chezmoi init --apply --force --ssh le-quentin
 # Vim and terminal config
 $DIR/common/setup-terminal-and-vim.sh
 
+# Install Dropbox 
+yay -S dropbox
+
 ### Change the shell and ask for relogin
 chsh -s /usr/bin/zsh
 echo "Your default shell has been changed, please login again."
