@@ -46,7 +46,9 @@ Those will be a starting point, because of course I will adjust config along the
 - [x] vim improvements : fix git plugin (commands, +/- next to the line numbers...)
 - [ ] vim improvements : better airline theme (match with terminal palette)
 - [ ] vim ide : java LSP setup
-- [ ] Try nvim ?
+- [x] Try nvim ?
+- [ ] Keep customizing nvim as an IDE: complete java functionnality on CocoBot and Disney project
+- [ ] nvim IDE : how to have an easily togglable terminal like in IntelliJ? 
 - [ ] check tmux still preserve history on ungraceful exit
 - [ ] test: fresh install on manjaro i3 or minimal 
 - [ ] test: fresh install on EndeavourOs (minimal edition ?)
