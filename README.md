@@ -50,6 +50,7 @@ Those will be a starting point, because of course I will adjust config along the
 - [ ] Keep customizing nvim as an IDE: Plugin for files and classes fuzzy search
 - [ ] Keep customizing nvim as an IDE: TreeSitter for better syntax highlighting? Check how it works with omnitheme
 - [ ] Keep customizing nvim as an IDE: complete java functionnality on CocoBot and Disney project
+- [ ] Keep customizing nvim as an IDE: java autocomplete improvement - get super methods after concrete ones (need to fork jdt.ls?)
 - [ ] nvim IDE : how to have an easily togglable terminal like in IntelliJ? 
 - [ ] check tmux still preserve history on ungraceful exit
 - [ ] test: fresh install on manjaro i3 or minimal 
