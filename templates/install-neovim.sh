@@ -14,6 +14,11 @@ do
    export "$KEY"="$VALUE"
 done
 
+# Dependencies
+# Ripgrep: used by telescope plugin
+$INSTALL_CMD ripgrep
+
+# Neovim
 $INSTALL_CMD neovim
 
 # Install vim-plug
