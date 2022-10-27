@@ -47,6 +47,8 @@ Those will be a starting point, because of course I will adjust config along the
 - [ ] vim improvements : better airline theme (match with terminal palette)
 - [ ] vim ide : java LSP setup
 - [x] Try nvim ?
+- [ ] Keep customizing nvim as an IDE: Plugin for files and classes fuzzy search
+- [ ] Keep customizing nvim as an IDE: TreeSitter for better syntax highlighting? Check how it works with omnitheme
 - [ ] Keep customizing nvim as an IDE: complete java functionnality on CocoBot and Disney project
 - [ ] nvim IDE : how to have an easily togglable terminal like in IntelliJ? 
 - [ ] check tmux still preserve history on ungraceful exit
