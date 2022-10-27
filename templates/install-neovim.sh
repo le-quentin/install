@@ -17,6 +17,8 @@ done
 # Dependencies
 # Ripgrep: used by telescope plugin
 $INSTALL_CMD ripgrep
+# fd: used by telescope plugin (better files find)
+$INSTALL_CMD fd
 
 # Neovim
 $INSTALL_CMD neovim
