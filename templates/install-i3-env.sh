@@ -58,3 +58,8 @@ git clone https://github.com/roosta/i3wsr.git
 cd i3wsr
 cargo build --release
 cp target/release/i3wsr /usr/local/bin/i3wsr
+
+# dependencies for polybar-spotify, to show the spotify player in spotify
+pip install dbus-python
+$INSTALL_CMD playerctl
+
