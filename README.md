@@ -24,6 +24,7 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
 
+- [ ] global ctrl+h/j/k/l send left/up/down/right with udevmon? 
 - [ ] rework theme scripts into a proper "omnitheme" project (Python? Rust? Go?), because this is becoming bigger than expected
 - [x] pick better colours for tmux-powerline and experiment with a few themes
 - [x] themes parametered with primary/secondary colors? Look into design good practices
