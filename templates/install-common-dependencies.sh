@@ -23,3 +23,7 @@ $INSTALL_CMD \
 	python python-pip`# Python env for scripting`\
 	systemd `#systemd: some stuff like machinectl might be missing`\
 	thunar `# File manager`
+
+## Setup node version to use lts by default
+nvm install lts/*
+nvm alias default node
