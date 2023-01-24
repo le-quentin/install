@@ -17,7 +17,7 @@ do
    export "$KEY"="$VALUE"
 done
 
-$INSTALL_CMD i3-gaps \
+$INSTALL_CMD i3-wm \
    autorandr \
    picom \
    network-manager-applet volumeicon pavucontrol pulseaudio \
