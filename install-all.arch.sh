@@ -14,8 +14,13 @@ sudo $DIR/common/install-fonts.sh
 sudo $DIR/common/save-tmux-zsh-histories-on-shutdown.sh
 sudo $DIR/templates/install-caps-to-esc.sh INSTALL_CMD="$PACMAN_INSTALL"
 sudo $DIR/templates/install-i3-env.sh INSTALL_CMD="$PACMAN_INSTALL"
+
 # Automatic snapshot setup with timeshift and pacman hook
 sudo $PACMAN_INSTALL timeshift timeshift-autosnap grub-btrfs
+
+# btrfmaintenance, tools for automatic btrfs maintenance, made by one of btrfs authors
+sudo $PACMAN_INSTALL btrfsmaintenance
+sudo /usr/share/btrfsmaintenance/btrfsmaintenance-refresh-cron.sh # Install the cron jobs for automatic maintenance
 
 # Dot files 
 
