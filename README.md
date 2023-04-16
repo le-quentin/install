@@ -12,11 +12,12 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 
 * Main system: rolling release, arch based (candidates are Manjaro and EndeavousOs. Endeavour feels nicer but I will probably stick with Manjaro because of the ease of i3 install and the improved stability with the 2 weeks delay with arch repos)
     * As it is expected to break someday after an update, this MUST have a reliable snapshot mechanism. So => btrfs partitioning, timeshift setup to take weekly/daily snapshots + snaphots before updates. 
-    * Won't enable AUR by default, chances are official repos will have all I need for my work environment.
     * Should take at least 50% of the disk, depending on size.
-* Secondary system: in case of failure, a Fedora 
+    * After 6 months of use, Manjaro has definitely provent to be stable, and timeshift snapshots/rollbacks work great in case of trouble. I just had my first big problem, and it was related to btrfs getting full without warning (because of the weird way it works). Added some maintenance tools to the install to try and fix that.
+* Secondary system: in case of failure, a Fedora. 
     * Doesn't need backup because is very unlikely to break. An ext4 partition should be good enough
     * Should take ~25% of disk, depending on size
+    * This will be helpful just in case my system breaks critically on a weekday and I need to work before having time to fix things.
 * Leisure system: for leisure use, during trips etc, a Windows install 
     * Should take ~25% of disk, depending on size
 
@@ -43,9 +44,9 @@ Those will be a starting point, because of course I will adjust config along the
 - [x] selected tmux-pane is circled (instead of the ugly "pane\*")
 - [x] pretty terminal (pretty colors, a lil opacity ? Again... look at themes)
 - [ ] Fix conky: adapt to screen size, get rid of irrelevant help (or replace with personal stickies?)
-- [ ] Test zoom, meet, slack, all with screenshare
+- [x] Test zoom, meet, slack, all with screenshare
 - [x] vim improvements : fix git plugin (commands, +/- next to the line numbers...)
-- [ ] vim improvements : better airline theme (match with terminal palette)
+- [x] vim improvements : better airline theme (match with terminal palette)
 - [ ] vim ide : java LSP setup
 - [x] Try nvim ?
 - [ ] Keep customizing nvim as an IDE: Plugin for files and classes fuzzy search
