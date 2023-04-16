@@ -22,6 +22,9 @@ sudo $PACMAN_INSTALL timeshift timeshift-autosnap grub-btrfs
 sudo $PACMAN_INSTALL btrfsmaintenance
 sudo /usr/share/btrfsmaintenance/btrfsmaintenance-refresh-cron.sh # Install the cron jobs for automatic maintenance
 
+# btdu, a tool to visualise *actual* files size in btrfs filesystem; useful when you need to free up some space and you wanna identify where are the space hogs
+sudo $PACMAN_INSTALL btdu
+
 # Dot files 
 
 ### Install chezmoi 
