@@ -87,3 +87,5 @@ First, reboot.
 If on arch, Dropbox was installed. Run it from rofi, it should appear in system tray. Set it to launch at startup, and sign in (it will open palemoon. Just sign in in firefox then paste the palemoon link in firefox to link the laptop). It should start syncing. You can find the files in ~/Dropbox. Open Thunar and add it to the quickbar on the left.
 
 One thing the scripts don't take care of is the install of nvidia drivers. But on Manjaro it should be easy enough : Manjaro Settings Manager => install the hybrid intel/nvidia ones; then every program you wanna run on the GPU, simply do it with `prime-run [command]`.
+
+...I could never make browsers work with Nvidia hardware acceleration. But by default they should run with intel graphics one, which is good enough (to check, Firefox: `about:support`=> Graphics having `WebRender` without `(Support)`; Vivaldi: chrome://gpu)
