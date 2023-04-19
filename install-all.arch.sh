@@ -38,7 +38,10 @@ chezmoi init --apply --force --ssh le-quentin
 $DIR/common/setup-terminal-and-vim.sh
 
 # Install Dropbox 
-yay -S dropbox
+yay -Syu dropbox
+
+# Install Vivaldi
+sudo $PACMAN_INSTALL vivaldi
 
 ### Change the shell and ask for relogin
 chsh -s /usr/bin/zsh
