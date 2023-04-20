@@ -17,6 +17,10 @@ sudo $DIR/common/save-tmux-zsh-histories-on-shutdown.sh
 sudo $DIR/templates/install-caps-to-esc.sh INSTALL_CMD="$DNF_INSTALL"
 sudo $DIR/templates/install-i3-env.sh INSTALL_CMD="$DNF_INSTALL"
 
+# asdf, managing versions for a lot (if not all) languages
+# WILL NEED A TWEAKING IN .ZSHRC. Probs should be done with chezmoi templates.
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+
 # Dot files 
 
 ### Install chezmoi 
@@ -27,6 +31,9 @@ chezmoi init --apply --force --ssh le-quentin
 
 # Vim and terminal config
 $DIR/common/setup-terminal-and-vim.sh
+
+# Setup asdf (in a separate script runnign with zsh)
+$DIR/common/setup-asdf.sh
 
 ### Change the shell and ask for relogin
 chsh -s /usr/bin/zsh

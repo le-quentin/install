@@ -16,6 +16,9 @@ sudo $DIR/common/save-tmux-zsh-histories-on-shutdown.sh
 sudo $DIR/templates/install-caps-to-esc.sh INSTALL_CMD="$PACMAN_INSTALL"
 sudo $DIR/templates/install-i3-env.sh INSTALL_CMD="$PACMAN_INSTALL"
 
+# asdf, managing versions for a lot (if not all) languages
+yay -Syu asdf
+
 # Automatic snapshot setup with timeshift and pacman hook
 sudo $PACMAN_INSTALL timeshift timeshift-autosnap grub-btrfs
 
@@ -43,7 +46,12 @@ yay -Syu dropbox
 # Install Vivaldi
 sudo $PACMAN_INSTALL vivaldi
 
-### Change the shell and ask for relogin
+# Setup asdf (in a separate script runnign with zsh)
+$DIR/common/setup-asdf.sh
+
+# Change the default shell
 chsh -s /usr/bin/zsh
-echo "Your default shell has been changed, please login again."
+
+# Ask for relogin
+echo "Everything was configured, please reloging to apply zsh as new default shell."
 

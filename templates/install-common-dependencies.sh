@@ -18,12 +18,8 @@ done
 
 echo $INSTALL_CMD
 $INSTALL_CMD \
-	make cmake gcc nodejs npm nvm`# General dev/build deps`\
+	make cmake gcc`# General dev/build deps`\
 	alacritty zsh tmux gvim fzf xsel `# Terminal`\
 	python python-pip`# Python env for scripting`\
 	systemd `#systemd: some stuff like machinectl might be missing`\
 	thunar `# File manager`
-
-## Setup node version to use lts by default
-nvm install lts/*
-nvm alias default node
