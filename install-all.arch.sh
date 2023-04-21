@@ -46,6 +46,9 @@ yay -Syu dropbox
 # Install Vivaldi
 sudo $PACMAN_INSTALL vivaldi
 
+# Install Stretchly (app reminding you to take breaks)
+snap install stretchly
+
 # Setup asdf (in a separate script runnign with zsh)
 $DIR/common/setup-asdf.sh
 
