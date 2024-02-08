@@ -1,3 +1,5 @@
+# When importing this playbook, provide a "tasks" var containing a list of task names
+
 - name: Install os-specific dependencies
   hosts: work_machine
   become: yes
@@ -14,10 +16,9 @@
 
   # This will use the common structure with the task file names as items
   # Expects a file in at least one of the three distro/family/default folder
+  # Uses the "tasks" variable, which should be a list of task names (= file names without the trailing .yaml)
   tasks:
     - name: "Install OS-specific dependencies from tasks/ folder"
       include_tasks: 
         file: "{{ lookup('first_found', task_files) }}"
-      with_items:
-        - install-alacritty
-        - install-python
+      with_items: "{{ tasks }}"
