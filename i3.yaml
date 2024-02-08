@@ -1,0 +1,40 @@
+- name: Install i3 and related packages
+  hosts: work_machine
+  become: yes
+  tasks:
+    - name: "i3 - core"
+      package:
+        name: 
+          - i3-wm
+        state: present
+    - name: "i3 - System"
+      package:
+        name: 
+          - conky
+          - polkit-gnome
+        state: present
+    - name: "i3 - display"
+      package:
+        name: 
+          - autorandr
+          - picom
+        state: present
+    - name: "i3 - OS bar and applets"
+      package:
+        name: 
+          - polybar
+          - network-manager-applet 
+          - volumeicon 
+          - pavucontrol 
+          - pulseaudio 
+          - xfce4-power-manager 
+          - xfce4-battery-plugin
+        state: present
+    - name: "i3 - Apps and utils"
+      package:
+        name: 
+          - thunar
+          - rofi 
+          - redshift 
+          - flameshot 
+        state: present

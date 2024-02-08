@@ -4,3 +4,4 @@
     tasks:
       - install-alacritty
       - install-python
+- import_playbook: "./i3.yaml"
