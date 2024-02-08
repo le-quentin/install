@@ -1,2 +1,3 @@
 - import_playbook: "./common-dependencies.yaml"
 - import_playbook: "./i3.yaml"
+- import_playbook: "./neovim.yaml"

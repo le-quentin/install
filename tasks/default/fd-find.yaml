@@ -1,0 +1,3 @@
+- name: "Default - fd-find"
+  package:
+    name: fd-find
