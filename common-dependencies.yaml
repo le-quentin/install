@@ -1,13 +1,21 @@
+- name: OS specific common packages
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - alacritty
+      - python
+      - asdf
 - name: Install common dependencies
   hosts: work_machine
-  become: yes
   tasks:
     - name: "Common - System"
+      become: yes
       package:
         name: 
           - systemd # in case some stuff like machinectl is missing
         state: present
     - name: "Common - General dev/build deps"
+      become: yes
       package:
         name: 
           - make
@@ -15,6 +23,7 @@
           - gcc
         state: present
     - name: "Common - Terminal Utilities"
+      become: yes
       package:
         name: 
           - zsh
@@ -24,14 +33,14 @@
           - xsel
         state: present
     - name: "Common - File manager"
+      become: yes
       package:
         name: 
           - thunar
         state: present
-- name: OS specific common packages
-  import_playbook: "./os-specific.yaml"
-  vars:
-    tasks:
-      - alacritty
-      - python
-      - asdf
+    - name: "Common - Node.js (asdf)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf install nodejs latest
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/nodejs/LICENSE"
+
+
