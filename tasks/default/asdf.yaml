@@ -2,6 +2,6 @@
   git:
     repo: https://github.com/asdf-vm/asdf.git
     dest: "{{ansible_env.HOME}}/.asdf"
-    branch: v0.14.0
+    refspec: v0.14.0
     update: no
 # That's it, .zshrc addition handled by chezmoi!
