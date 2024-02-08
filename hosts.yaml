@@ -1,0 +1,5 @@
+ungrouped:
+  hosts:
+    work_machine:
+      ansible_host: localhost
+      ansible_connection: local

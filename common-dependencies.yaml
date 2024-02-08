@@ -1,0 +1,37 @@
+- name: Install common dependencies
+  hosts: work_machine
+  become: yes
+  tasks:
+    - name: "[Common] System"
+      package:
+        name: 
+          - systemd # in case some stuff like machinectl is missing
+        state: present
+    - name: "[Common] General dev/build deps"
+      package:
+        name: 
+          - make
+          - cmake
+          - gcc
+        state: present
+    - name: "[Common] Terminal"
+      package:
+        name: 
+          - alacritty
+          - zsh
+          - tmux
+          - vim
+          - fzf
+          - xsel
+        state: present
+    - name: "[Common] Python"
+      package:
+        name: 
+          - python
+          - python-pip
+        state: present
+    - name: "[Common] File manager"
+      package:
+        name: 
+          - thunar
+        state: present
