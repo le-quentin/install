@@ -17,6 +17,12 @@
     register: chsh_result
     changed_when: "'Shell changed' in chsh_result.stdout"
     # TODO notify to ask for relogin on change
+  - name: "Home config - fzf"
+    git: 
+      repo: https://github.com/junegunn/fzf.git
+      depth: 1
+      dest: "{{ansible_env.HOME}}/.fzf"
+      update: no
   - name: "Home config - oh-my-zsh"
     shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" "--unattended"
     args:
