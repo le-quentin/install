@@ -1,0 +1,3 @@
+- name: "Common (Archlinux) - Alacritty (lightweight terminal emulator)"
+  package:
+    name: alacritty

@@ -1,7 +1,51 @@
 # install
-Install my env (packages, dotfiles management) on a fresh Unix install
+Install my env (packages, dotfiles management) on a fresh Unix install, using Ansible
 
-## Plan
+## How to
+
+Right now, this is supposing a host with Ansible installed, since the playbook runs locally.
+
+When and if I find a convenient way to ssh into my VMs out of the box (probably some QEMU setup, maybe Packer or Vagrant..?), I might change this to remote install.
+
+### Pull the repo
+
+- Setup ssh key for github (copy the generated key in Github account): 
+```sh
+ssh-keygen -t ed25519 -C "quentin@bonnet.software"
+```
+- Clone this wherever you'd like
+```sh
+git clone git@github.com:le-quentin/install.git
+```
+
+### Install Ansible
+
+This should be seamless on most distros. Also, this should pull a lot of helpful dependencies.
+
+i.e., for debian:
+```sh
+sudo apt install ansible
+```
+
+### Run the playbook
+
+```sh
+ansible-playbook -i hosts.yaml install-all.yaml -K
+```
+
+### Manual setup after install
+
+First, reboot.
+
+If on arch, Dropbox was installed. Run it from rofi, it should appear in system tray. Set it to launch at startup, and sign in (it will open palemoon. Just sign in in firefox then paste the palemoon link in firefox to link the laptop). It should start syncing. You can find the files in ~/Dropbox. Open Thunar and add it to the quickbar on the left.
+
+One thing the scripts don't take care of is the install of nvidia drivers. But on Manjaro it should be easy enough : Manjaro Settings Manager => install the hybrid intel/nvidia ones; then every program you wanna run on the GPU, simply do it with `prime-run [command]`.
+
+...I could never make browsers work with Nvidia hardware acceleration. But by default they should run with intel graphics one, which is good enough (to check, Firefox: `about:support`=> Graphics having `WebRender` without `(Support)`; Vivaldi: chrome://gpu)
+
+## History 
+
+### Plan
 
 I'm used to wokring on MacOs. I wanna switch to Linux for my next laptop.
 
@@ -20,6 +64,37 @@ If I want my Linux machine to be the same I need a plan. Current plan :
     * This will be helpful just in case my system breaks critically on a weekday and I need to work before having time to fix things.
 * Leisure system: for leisure use, during trips etc, a Windows install 
     * Should take ~25% of disk, depending on size
+
+### Disney
+
+For my job at Disney, I have to use f5vpn. There is an AUR package, but it has proven to be unreliable after updates.
+
+There is a workaround script, which still requires `f5vpn` to work. But the AUR package relies on an unsupported dependency that takes AGES to build. Workaround is using another dependency:
+```sh
+yay -G f5vpn
+```
+
+This downloaded the pkg files. Go into the directory and modify the PKGBUILD, find the `depends=` line, and replace `qt5-webkit` with `python-pyqt5-webengine`. Then:
+```sh
+makepkg -si
+```
+
+Will install the package with this dependency. 
+
+Then, install the script:
+```sh
+git clone https://github.com/zrhoffman/svpn-login.git
+cd svpn-login
+./svpn-login.py --sessionid=<session-id> orlando-bsp.disney.com
+```
+
+To get the sessionid, just open the vpn virtual desk in a browser, and then run this javascript in the console:
+```javascript
+document.cookie.match(/MRHSession=(.*?); /)[1]
+```
+
+I should install the script in a proper location with these install scripts, and setup an alias for it.
+
 
 ## TODO
 
@@ -60,63 +135,4 @@ Those will be a starting point, because of course I will adjust config along the
 - [ ] check tmux still preserve history on ungraceful exit
 - [ ] test: fresh install on manjaro i3 or minimal 
 - [ ] test: fresh install on EndeavourOs (minimal edition ?)
-
-## How to
-
-### Pull the repo
-
-- Setup ssh key for github (copy the generated key in Github account): 
-```sh
-ssh-keygen -t ed25519 -C "quentin@bonnet.software"
-```
-- Clone this wherever you'd like
-```sh
-git clone git@github.com:le-quentin/install.git
-```
-
-### Install
-Run the relevant script, i.e. for arch distros:
-```sh
-./install-all.arch.sh
-```
-
-### Manual setup after install
-
-First, reboot.
-
-If on arch, Dropbox was installed. Run it from rofi, it should appear in system tray. Set it to launch at startup, and sign in (it will open palemoon. Just sign in in firefox then paste the palemoon link in firefox to link the laptop). It should start syncing. You can find the files in ~/Dropbox. Open Thunar and add it to the quickbar on the left.
-
-One thing the scripts don't take care of is the install of nvidia drivers. But on Manjaro it should be easy enough : Manjaro Settings Manager => install the hybrid intel/nvidia ones; then every program you wanna run on the GPU, simply do it with `prime-run [command]`.
-
-...I could never make browsers work with Nvidia hardware acceleration. But by default they should run with intel graphics one, which is good enough (to check, Firefox: `about:support`=> Graphics having `WebRender` without `(Support)`; Vivaldi: chrome://gpu)
-
-#### Disney
-
-For my job at Disney, I have to use f5vpn. There is an AUR package, but it has proven to be unreliable after updates.
-
-There is a workaround script, which still requires `f5vpn` to work. But the AUR package relies on an unsupported dependency that takes AGES to build. Workaround is using another dependency:
-```sh
-yay -G f5vpn
-```
-
-This downloaded the pkg files. Go into the directory and modify the PKGBUILD, find the `depends=` line, and replace `qt5-webkit` with `python-pyqt5-webengine`. Then:
-```sh
-makepkg -si
-```
-
-Will install the package with this dependency. 
-
-Then, install the script:
-```sh
-git clone https://github.com/zrhoffman/svpn-login.git
-cd svpn-login
-./svpn-login.py --sessionid=<session-id> orlando-bsp.disney.com
-```
-
-To get the sessionid, just open the vpn virtual desk in a browser, and then run this javascript in the console:
-```javascript
-document.cookie.match(/MRHSession=(.*?); /)[1]
-```
-
-I should install the script in a proper location with these install scripts, and setup an alias for it.
 
