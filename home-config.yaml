@@ -17,3 +17,23 @@
     register: chsh_result
     changed_when: "'Shell changed' in chsh_result.stdout"
     # TODO notify to ask for relogin on change
+  - name: "Home config - oh-my-zsh"
+    shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" "--unattended"
+    args:
+      creates: "{{ ansible_env.HOME }}/.oh-my-zsh"
+  - name: "Home config - oh-my-zsh - restore zshrc"
+    shell: "mv {{ansible_env.HOME}}/.zshrc.pre-oh-my-zsh {{ansible_env.HOME}}/.zshrc"
+    args:
+      removes: "{{ansible_env.HOME}}/.zshrc.pre-oh-my-zsh"
+  - name: "Home config - powerlevel10k"
+    git:
+      repo: https://github.com/romkatv/powerlevel10k.git
+      depth: 1
+      dest: "{{ansible_env.HOME}}/.oh-my-zsh/custom/themes/powerlevel10k"
+      update: no
+  - name: "Home config - tmux-powerline"
+    git:
+      repo: https://github.com/erikw/tmux-powerline.git
+      depth: 1
+      dest: "{{ansible_env.HOME}}/.tmux-powerline"
+      update: no
