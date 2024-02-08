@@ -5,3 +5,7 @@
       debug: msg="{{ansible_distribution}}"
     - name: os_family
       debug: msg="{{ansible_os_family}}"
+    - name: HOME
+      debug: msg="{{ansible_env.HOME}}"
+    - name: ansible_user_id
+      debug: msg="{{ansible_user_id}}"

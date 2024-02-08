@@ -1,24 +1,28 @@
 - name: Install i3 and related packages
   hosts: work_machine
-  become: yes
+  become: no
   tasks:
     - name: "i3 - core"
+      become: yes
       package:
         name: 
           - i3-wm
         state: present
     - name: "i3 - System"
+      become: yes
       package:
         name: 
           - conky
         state: present
     - name: "i3 - display"
+      become: yes
       package:
         name: 
           - autorandr
           - picom
         state: present
     - name: "i3 - OS bar and applets"
+      become: yes
       package:
         name: 
           - polybar
@@ -28,6 +32,7 @@
           - xfce4-battery-plugin
         state: present
     - name: "i3 - Apps and utils"
+      become: yes
       package:
         name: 
           - thunar
@@ -35,7 +40,25 @@
           - redshift 
           - flameshot 
         state: present
-- name: OS specific i3 packages
+    - name: "i3 - Polybar themes"
+      block:
+        - name: "Clone repository"
+          git:
+            repo: https://github.com/adi1090x/polybar-themes.git
+            depth: 1
+            dest: "{{ansible_env.HOME}}/.polybar-themes"
+            update: no
+        - name: "Make setup script executable"
+          file:
+            dest: "{{ansible_env.HOME}}/.polybar-themes/setup.sh"
+            mode: u+x
+        - name: "Run setup script"
+          shell: "./setup.sh"
+          args:
+            chdir: "{{ansible_env.HOME}}/.polybar-themes"
+            creates: "{{ansible_env.HOME}}/.config/polybar/launch.sh"
+- name: "i3 - OS specific i3 packages"
+  become: yes
   import_playbook: "./os-specific.yaml"
   vars:
     tasks:
