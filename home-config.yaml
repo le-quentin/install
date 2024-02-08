@@ -17,7 +17,7 @@
     register: chsh_result
     changed_when: "'Shell changed' in chsh_result.stdout"
     # TODO notify to ask for relogin on change
-  - name: "Home config - fzf"
+  - name: "Home config - fzf - clone"
     git: 
       repo: https://github.com/junegunn/fzf.git
       depth: 1
@@ -50,3 +50,8 @@
       dest: /usr/local/share/fonts/
   - name: "Home config - reload fonts cache"
     shell: fc-cache -f -v
+- name: "Home config - OS specific config"
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - fzf
