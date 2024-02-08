@@ -7,7 +7,7 @@
       package:
         name: 
           - i3-wm
-          - i3-lock
+          - i3lock
         state: present
     - name: "i3 - System"
       become: yes

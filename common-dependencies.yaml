@@ -29,7 +29,6 @@
           - zsh
           - tmux
           - vim
-          - fzf
           - xsel
         state: present
     - name: "Common - File manager"

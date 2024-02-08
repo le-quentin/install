@@ -1,1 +1,6 @@
-# Nothing to do, Arch fzf up-to-date
+- name: "Home config (Archlinux) - fzf - install"
+  become: yes
+  package:
+    name:
+      - fzf
+    state: present
