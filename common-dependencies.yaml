@@ -14,10 +14,14 @@
           - cmake
           - gcc
         state: present
-    - include_tasks: tasks/Archlinux/install-alacritty.yaml
-      when: ansible_distribution == "Archlinux"
-    - include_tasks: tasks/default/install-alacritty.yaml
-      when: ansible_distribution != "Archlinux"
+    - name: "Common - Alacritty (lightweight terminal emulator)"
+      include_tasks: 
+        file: "{{ item }}"
+      with_first_found:
+        - files:
+          - "tasks/{{ansible_distribution}}/install-alacritty.yaml"
+          - "tasks/{{ansible_os_family}}/install-alacritty.yaml"
+          - "tasks/default/install-alacritty.yaml"
     - name: "Common - Terminal Utilities"
       package:
         name: 
