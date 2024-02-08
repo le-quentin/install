@@ -42,3 +42,5 @@
       - polkit
       - network-manager-applet
       - volume-applet
+      - settings-manager
+      - i3-extras

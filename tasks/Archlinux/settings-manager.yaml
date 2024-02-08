@@ -1,0 +1,6 @@
+- name: "Archlinux - settings manager"
+  package:
+    name: 
+      - manjaro-settings-manager
+      - manjaro-settings-manager-notifier
+    state: present
