@@ -37,3 +37,10 @@
       depth: 1
       dest: "{{ansible_env.HOME}}/.tmux-powerline"
       update: no
+  - name: "Home config - install fonts"
+    become: yes
+    copy:
+      src: ./fonts/ 
+      dest: /usr/local/share/fonts/
+  - name: "Home config - reload fonts cache"
+    shell: fc-cache -f -v
