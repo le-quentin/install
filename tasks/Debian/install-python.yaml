@@ -1,0 +1,6 @@
+- name: "Common (Debian) - Python"
+  package:
+    name: 
+      - python-is-python3
+      - python3-pip
+    state: present

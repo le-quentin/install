@@ -1,0 +1,6 @@
+- name: "Common (Default) - Python"
+  package:
+    name: 
+      - python
+      - python-pip
+    state: present

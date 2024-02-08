@@ -32,11 +32,13 @@
           - xsel
         state: present
     - name: "Common - Python"
-      package:
-        name: 
-          - python
-          - python-pip
-        state: present
+      include_tasks: 
+        file: "{{ item }}"
+      with_first_found:
+        - files:
+          - "tasks/{{ansible_distribution}}/install-python.yaml"
+          - "tasks/{{ansible_os_family}}/install-python.yaml"
+          - "tasks/default/install-python.yaml"
     - name: "Common - File manager"
       package:
         name: 
