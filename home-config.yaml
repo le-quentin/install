@@ -1,0 +1,19 @@
+- name: "Home config - OS specific packages"
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - chezmoi
+- name: Configure ~ env
+  hosts: work_machine
+  become: no
+  tasks:
+  - name: "Home config - setup chezmoi"
+    shell: chezmoi init --apply --force --ssh le-quentin
+    args:
+      creates: "{{ansible_env.HOME}}/.local/share/chezmoi"
+  - name: "Home config - zsh by default"
+    become: yes
+    shell: chsh -s /usr/bin/zsh {{ ansible_user_id }}
+    register: chsh_result
+    changed_when: "'Shell changed' in chsh_result.stdout"
+    # TODO notify to ask for relogin on change
