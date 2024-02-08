@@ -53,7 +53,7 @@
             dest: "{{ansible_env.HOME}}/.polybar-themes/setup.sh"
             mode: u+x
         - name: "Run setup script"
-          shell: "./setup.sh"
+          shell: "echo 1 > ./setup.sh"
           args:
             chdir: "{{ansible_env.HOME}}/.polybar-themes"
             creates: "{{ansible_env.HOME}}/.config/polybar/launch.sh"
