@@ -38,9 +38,24 @@
         name: 
           - thunar
         state: present
-    - name: "Common - Node.js (asdf)"
-      shell: . /opt/asdf-vm/asdf.sh && asdf install nodejs latest
+    - name: "Common - Node.js (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add nodejs
       args:
-        creates: "{{ ansible_env.HOME }}/.asdf/plugins/nodejs/LICENSE"
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/nodejs"
+    - name: "Common - Java (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add java
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/java"
+    - name: "Common - Go (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add golang
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/golang"
+    - name: "Common - Install all versions with asdf"
+      shell: . /opt/asdf-vm/asdf.sh && asdf install
+      args:
+        chdir: "{{ ansible_env.HOME }}/"
+        creates: "{{ ansible_env.HOME }}/.asdf/installs/java"
+
+
 
 
