@@ -1,6 +1,7 @@
 - name: "Home config - fzf - build"
   shell: ".fzf/install --no-key-bindings --no-completion --no-update-rc" # Install because some distros have it outdated - not updating any files because managed by chezmoi
   args:
+    chdir: "{{ ansible_env.HOME }}"
     creates: "{{ ansible_env.HOME }}/.fzf/bin/fzf"
 - name: "Home config - fzf - (re)install"
   file:
