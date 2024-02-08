@@ -6,7 +6,8 @@
       become: yes
       package:
         name: 
-          - i3
+          - i3-wm
+          - i3-lock
         state: present
     - name: "i3 - System"
       become: yes
