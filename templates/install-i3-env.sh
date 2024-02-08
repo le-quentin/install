@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install i3 and all tools and themes I like to use.
 # This does not do configuration per se, the dot files are handled separately

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install caps2esc, and enable the demon
 # This is a service that will replace capslock key with an escape key/ctrl key when you hold
