@@ -1,5 +1,7 @@
 - hosts: work_machine
   become: false
   tasks:
-    - name: Distribution
+    - name: distribution
       debug: msg="{{ansible_distribution}}"
+    - name: os_family
+      debug: msg="{{ansible_os_family}}"
