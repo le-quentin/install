@@ -1,0 +1,6 @@
+- name: "Archlinux - display manager (greeting screen)"
+  package:
+    name: 
+      - lightdm
+      - lightdm-slick-greeter
+    state: present

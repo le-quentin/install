@@ -67,4 +67,5 @@
       - network-manager-applet
       - volume-applet
       - settings-manager
+      - display-manager # for greeting screen
       - i3-extras

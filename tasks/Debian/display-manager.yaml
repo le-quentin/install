@@ -1,0 +1,5 @@
+- name: "Debian - display manager (greeting screen)"
+  package:
+    name: 
+      - slick-greeter
+    state: present
