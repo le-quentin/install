@@ -14,14 +14,6 @@
           - cmake
           - gcc
         state: present
-    - name: "Common - Alacritty (lightweight terminal emulator)"
-      include_tasks: 
-        file: "{{ item }}"
-      with_first_found:
-        - files:
-          - "tasks/{{ansible_distribution}}/install-alacritty.yaml"
-          - "tasks/{{ansible_os_family}}/install-alacritty.yaml"
-          - "tasks/default/install-alacritty.yaml"
     - name: "Common - Terminal Utilities"
       package:
         name: 
@@ -31,14 +23,6 @@
           - fzf
           - xsel
         state: present
-    - name: "Common - Python"
-      include_tasks: 
-        file: "{{ item }}"
-      with_first_found:
-        - files:
-          - "tasks/{{ansible_distribution}}/install-python.yaml"
-          - "tasks/{{ansible_os_family}}/install-python.yaml"
-          - "tasks/default/install-python.yaml"
     - name: "Common - File manager"
       package:
         name: 

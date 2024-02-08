@@ -1,4 +1,4 @@
-- name: "Common (Debian) - Python"
+- name: "Debian - Python"
   package:
     name: 
       - python-is-python3
