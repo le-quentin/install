@@ -1,0 +1,5 @@
+- name: "Archlinux - volume applet"
+  package:
+    name: 
+      - volumeicon
+    state: present

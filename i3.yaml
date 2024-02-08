@@ -22,7 +22,6 @@
       package:
         name: 
           - polybar
-          - volumeicon 
           - pavucontrol 
           - pulseaudio 
           - xfce4-power-manager 
@@ -41,3 +40,5 @@
   vars:
     tasks:
       - polkit
+      - network-manager-applet
+      - volume-applet
