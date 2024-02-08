@@ -67,7 +67,7 @@ Those will be a starting point, because of course I will adjust config along the
 
 - Setup ssh key for github (copy the generated key in Github account): 
 ```sh
-ssh-keygen -t ed25519 -C "quentin.bonnet.work@gmail.com"
+ssh-keygen -t ed25519 -C "quentin@bonnet.software"
 ```
 - Clone this wherever you'd like
 ```sh
