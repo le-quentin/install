@@ -1,0 +1,5 @@
+- name: "Debian - network manager applet"
+  package:
+    name: 
+      - budgie-network-manager-applet
+    state: present

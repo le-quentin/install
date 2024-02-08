@@ -22,7 +22,6 @@
       package:
         name: 
           - polybar
-          - network-manager-applet 
           - volumeicon 
           - pavucontrol 
           - pulseaudio 
