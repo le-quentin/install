@@ -32,5 +32,6 @@
   import_playbook: "./os-specific.yaml"
   vars:
     tasks:
-      - install-alacritty
-      - install-python
+      - alacritty
+      - python
+      - asdf
