@@ -1,4 +1,5 @@
 - name: "Archlinux - i3 extras"
+  become: yes
   package:
     name: 
       - libxcursor

@@ -1,3 +1,4 @@
 - name: "Archlinux - polkit"
+  become: yes
   package:
     name: polkit-gnome

@@ -1,4 +1,5 @@
 - name: "Default - Alacritty (lightweight terminal emulator)"
+  become: yes
   snap:
     name: alacritty
     classic: true

@@ -1,3 +1,4 @@
 - name: "Default - fd-find"
+  become: yes
   package:
     name: fd-find

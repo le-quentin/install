@@ -1,4 +1,5 @@
 - name: "Archlinux - display manager (greeting screen)"
+  become: yes
   package:
     name: 
       - lightdm

@@ -1,4 +1,5 @@
 - name: "Default - Python"
+  become: yes
   package:
     name: 
       - python

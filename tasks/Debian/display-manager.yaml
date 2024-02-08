@@ -1,4 +1,5 @@
 - name: "Debian - display manager (greeting screen)"
+  become: yes
   package:
     name: 
       - slick-greeter

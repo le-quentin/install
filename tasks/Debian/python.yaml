@@ -1,4 +1,5 @@
 - name: "Debian - Python"
+  become: yes
   package:
     name: 
       - python-is-python3
