@@ -28,3 +28,9 @@
         name: 
           - thunar
         state: present
+- name: OS specific common packages
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - install-alacritty
+      - install-python

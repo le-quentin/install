@@ -1,7 +1,2 @@
 - import_playbook: "./common-dependencies.yaml"
-- import_playbook: "./os-specific.yaml"
-  vars:
-    tasks:
-      - install-alacritty
-      - install-python
 - import_playbook: "./i3.yaml"

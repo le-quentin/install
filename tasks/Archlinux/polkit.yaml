@@ -1,0 +1,3 @@
+- name: "Archlinux - polkit"
+  package:
+    name: polkit-gnome
