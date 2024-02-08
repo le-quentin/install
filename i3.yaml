@@ -57,6 +57,7 @@
           args:
             chdir: "{{ansible_env.HOME}}/.polybar-themes"
             creates: "{{ansible_env.HOME}}/.config/polybar/launch.sh"
+        # TODO install i3wsr and rofi
 - name: "i3 - OS specific i3 packages"
   become: yes
   import_playbook: "./os-specific.yaml"
