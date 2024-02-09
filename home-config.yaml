@@ -41,6 +41,7 @@
     git:
       repo: https://github.com/erikw/tmux-powerline.git
       depth: 1
+      version: 42f06c1
       dest: "{{ansible_env.HOME}}/.tmux-powerline"
       update: no
   - name: "Home config - install fonts"
