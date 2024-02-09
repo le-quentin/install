@@ -1,0 +1,35 @@
+- name: "Archlinux - Docker - install"
+  become: yes
+  package:
+    name: 
+      - docker
+      - docker-compose
+      - docker-buildx
+  register: install
+- name: "Archlinux - Docker - enable"
+  become: yes
+  systemd_service:
+    state: started
+    enabled: true
+- name: "Archlinux - Docker - Create group (rootless mode)"
+  group:
+    name: docker
+    state: present
+- name: "Archlinux - Docker - Add user to Docker group (rootless mode)"
+  become: yes
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: true
+  register: group
+- name: "Archlinux - Docker - start daemons"
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  loop:
+    - docker.service
+    - containerd.service
+- name: "Archlinux - Docker - apply group changes immediately (rootless mode)"
+  shell: newgrp docker
+  when: install.changed or group.changed 

@@ -1,0 +1,75 @@
+- name: "Debian - Docker - Install requirements"
+  become: yes
+  ansible.builtin.apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - software-properties-common
+
+- name: "Debian - Docker - Create directory for Docker's GPG key"
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: "Debian - Docker - Add Docker's official GPG key"
+  become: yes
+  ansible.builtin.apt_key:
+    url: "https://download.docker.com/linux/{{ ansible_distribution | lower}}/gpg"
+    keyring: /etc/apt/keyrings/docker.gpg
+    state: present
+
+- name: "Debian - Docker - Print architecture variables"
+  ansible.builtin.debug:
+    msg: "Architecture: {{ architecture }}, Codename: {{ ansible_lsb.codename }}"
+
+- name: "Debian - Docker - Add Docker repository"
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: >-
+      deb [arch={{ arch_mapping[architecture] | default(architecture) }}
+      signed-by=/etc/apt/keyrings/docker.gpg]
+      https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_lsb.codename }} stable
+    filename: docker
+    state: present
+
+- name: "Debian - Docker - Install Docker and related packages"
+  become: yes
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  register: install
+  loop:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    - docker-buildx-plugin
+    - docker-compose-plugin
+
+- name: "Debian - Docker - Add Docker group"
+  ansible.builtin.group:
+    name: docker
+    state: present
+
+- name: "Debian - Docker - Add user to Docker group (rootless mode)"
+  become: yes
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: true
+  register: group
+
+- name: "Debian - Docker - start daemons"
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  loop:
+    - docker.service
+    - containerd.service
+- name: "Debian - Docker - apply group changes immediately (rootless mode)"
+  shell: newgrp docker
+  when: install.changed or group.changed 

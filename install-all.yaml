@@ -1,4 +1,5 @@
 - import_playbook: "./common-dependencies.yaml"
 - import_playbook: "./home-config.yaml"
 - import_playbook: "./i3.yaml"
+- import_playbook: "./docker.yaml"
 - import_playbook: "./neovim.yaml"
