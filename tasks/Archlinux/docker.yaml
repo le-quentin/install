@@ -9,6 +9,7 @@
 - name: "Archlinux - Docker - enable"
   become: yes
   systemd_service:
+    name: docker
     state: started
     enabled: true
 - name: "Archlinux - Docker - Create group (rootless mode)"
@@ -18,7 +19,7 @@
 - name: "Archlinux - Docker - Add user to Docker group (rootless mode)"
   become: yes
   ansible.builtin.user:
-    name: "{{ ansible_user }}"
+    name: "{{ ansible_user_id }}"
     groups: docker
     append: true
   register: group
