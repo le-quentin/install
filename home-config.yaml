@@ -34,6 +34,7 @@
   - name: "Home config - powerlevel10k"
     git:
       repo: https://github.com/romkatv/powerlevel10k.git
+      version: 5bba4b8
       depth: 1
       dest: "{{ansible_env.HOME}}/.oh-my-zsh/custom/themes/powerlevel10k"
       update: no
