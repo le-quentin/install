@@ -1,10 +1,4 @@
-- name: "Neovim - OS specific dependencies"
-  become: yes
-  import_playbook: "./os-specific.yaml"
-  vars:
-    tasks:
-      - fd-find
-- name: Install and setup neovim with plugins
+- name: "Neovim - Common dependencies" 
   hosts: work_machine
   become: no
   tasks:
@@ -14,12 +8,17 @@
         name: 
           - ripgrep
         state: present
-    - name: "Neovim - Install"
-      become: yes
-      package:
-        name: 
-          - neovim
-        state: present
+- name: "Neovim - OS specific install"
+  become: no
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - fd-find
+      - neovim
+- name: "Neovim - Plugins" 
+  hosts: work_machine
+  become: no
+  tasks:
     - name: "Neovim - create plug.vim directory"
       file:
         path: "{{ ansible_env.HOME }}/.local/share/nvim/site/autoload"

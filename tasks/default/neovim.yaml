@@ -1,0 +1,19 @@
+- name: "Default - Install neovim - Install FUSE, to run AppImages"
+  become: yes
+  package:
+    name:
+      - fuse
+    state: present
+- name: "Default - Install neovim - Create app-images folder"
+  file:
+    path: "{{ansible_env.HOME}}/app-images"
+    state: directory
+- name: "Default - Install neovim - Download latest AppImage"
+  get_url:
+    url: https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
+    dest: "{{ansible_env.HOME}}/app-images/nvim"
+    mode: '0700'
+  register: result
+- name: "debug"
+  debug: 
+    msg: "{{result}}"
