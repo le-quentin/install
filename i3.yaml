@@ -42,24 +42,7 @@
           - redshift 
           - flameshot 
         state: present
-    - name: "i3 - Polybar themes"
-      block:
-        - name: "Clone repository"
-          git:
-            repo: https://github.com/adi1090x/polybar-themes.git
-            depth: 1
-            dest: "{{ansible_env.HOME}}/.polybar-themes"
-            update: no
-        - name: "Make setup script executable"
-          file:
-            dest: "{{ansible_env.HOME}}/.polybar-themes/setup.sh"
-            mode: u+x
-        - name: "Run setup script"
-          shell: "echo 1 > ./setup.sh"
-          args:
-            chdir: "{{ansible_env.HOME}}/.polybar-themes"
-            creates: "{{ansible_env.HOME}}/.config/polybar/launch.sh"
-        # TODO install i3wsr and rofi
+        # TODO install i3wsr
 - name: "i3 - OS specific i3 packages"
   become: yes
   import_playbook: "./os-specific.yaml"
