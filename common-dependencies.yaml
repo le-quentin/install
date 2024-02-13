@@ -49,6 +49,10 @@
       shell: . /opt/asdf-vm/asdf.sh && asdf plugin add golang
       args:
         creates: "{{ ansible_env.HOME }}/.asdf/plugins/golang"
+    - name: "Common - Maven (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add maven
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/maven"
     - name: "Common - Install all versions with asdf"
       shell: . /opt/asdf-vm/asdf.sh && asdf install
       args:
