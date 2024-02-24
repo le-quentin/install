@@ -1,0 +1,21 @@
+# Caps to esc, to transform caps-lock of laptop into esc/ctrl key
+- name: "caps2esc" 
+  hosts: work_machine
+  become: no
+  tasks:
+    - name: "caps2esc - install package"
+      become: yes
+      package:
+        name: 
+          - interception-caps2esc
+        state: present
+    - name: "caps2esc - copy config"
+      become: yes
+      copy:
+        src: ./resources/caps-lock-to-escape-and-control.yaml 
+        dest: /etc/interception/udevmon.d/
+    - name: "caps2esc - enable service"
+      ansible.builtin.systemd:
+        name: "udevmon.service"
+        enabled: true
+        state: started

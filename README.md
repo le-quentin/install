@@ -33,6 +33,12 @@ sudo apt install ansible
 ansible-playbook -i hosts.yaml install-all.yaml -K
 ```
 
+If caps2esc needs to be installed (transform caps lock into escape/ctrl):
+
+```sh
+ansible-playbook -i hosts.yaml caps2esc.yaml -K
+```
+
 ### Manual setup after install
 
 First, reboot.
