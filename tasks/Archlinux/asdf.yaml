@@ -1,4 +1,4 @@
 - name: "Archlinux - asdf"
-  become: yes
-  package:
+  yay:
     name: asdf-vm
+    state: present
