@@ -45,6 +45,21 @@
       version: 42f06c1
       dest: "{{ansible_env.HOME}}/.tmux-powerline"
       update: no
+  - name: "Home config - pull omnitheme"
+    git:
+      repo: git@github.com:le-quentin/omnitheme
+      dest: "{{ansible_env.HOME}}/perso/omnitheme"
+      update: no
+  - name: Manually create the initial virtualenv
+    command:
+      cmd: python -m "{{ansible_env.HOME}}/perso/omnitheme/venv"
+      creates: "{{ansible_env.HOME}}/perso/omnitheme/venv"
+  - name: "Home config - install omnitheme requirements"
+    pip:
+      requirements: "{{ansible_env.HOME}}/perso/omnitheme/requirements.txt"
+      virtualenv: "{{ansible_env.HOME}}/perso/omnitheme/venv"
+  - name: "Home config - setup theme with omnitheme"
+    shell: "{{ansible_env.HOME}}/perso/omnitheme/venv/bin/python {{ansible_env.HOME}}/perso/omnitheme/omnitheme.py oceanic_custom"
   - name: "Home config - install fonts"
     become: yes
     copy:
