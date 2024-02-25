@@ -1,0 +1,30 @@
+# Required by some jobs security standards
+- name: "Clamav - Install and setup the antivirus for some jobs requirements"
+  hosts: work_machine
+  become: no
+  become: no
+  tasks:
+    - name: "Clamav - installation"
+      become: yes
+      package:
+        name: 
+          - clamav
+        state: present
+    - name: "Clamav - create freshclam log file (bug in arch, not created by freshclam)"
+      become: yes
+      shell: touch /var/log/clamav/freshclam.log
+      args:
+        creates: /var/log/clamav/freshclam.log
+    - name: "Clamav - first freshclam run (to update viruses database)"
+      become: yes
+      shell: freshclam
+    - name: "Clamav - enable clamav-freshclam service to keep databases up-to-date"
+      ansible.builtin.systemd:
+        name: "clamav-freshclam"
+        enabled: true
+        state: started
+    - name: "Clamav - enable clamav-daemon service to run antivirus scans"
+      ansible.builtin.systemd:
+        name: "clamav-daemon"
+        enabled: true
+        state: started
