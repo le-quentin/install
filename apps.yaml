@@ -1,0 +1,9 @@
+- name: "Apps - OS specific install"
+  become: no
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - intellij
+      - slack
+      - zoom
+      - vivaldi

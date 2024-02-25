@@ -1,0 +1,6 @@
+- name: "Archlinux - Vivaldi"
+  yay:
+    name: 
+      - vivaldi
+      - noto-fonts-emoji # necessary to see emojis in vivaldi
+    state: present

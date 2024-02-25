@@ -3,3 +3,4 @@
 - import_playbook: "./i3.yaml"
 - import_playbook: "./docker.yaml"
 - import_playbook: "./neovim.yaml"
+- import_playbook: "./apps.yaml"

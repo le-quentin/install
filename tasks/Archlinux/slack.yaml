@@ -1,0 +1,4 @@
+- name: "Archlinux - slack"
+  yay:
+    name: slack-desktop
+    state: present

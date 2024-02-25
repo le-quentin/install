@@ -1,0 +1,6 @@
+- name: "Archlinux - IntelliJ"
+  yay:
+    name: 
+      - intellij-idea-ultimate-edition
+      - intellij-idea-ultimate-edition-jre
+    state: present

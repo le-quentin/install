@@ -1,0 +1,4 @@
+- name: "Archlinux - zoom"
+  yay:
+    name: zoom
+    state: present
