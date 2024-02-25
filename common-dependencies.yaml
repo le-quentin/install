@@ -37,6 +37,12 @@
         name: 
           - thunar
         state: present
+    - name: "Common - Timeshift"
+      become: yes
+      package:
+        name:
+          - timeshift
+        state: present
     - name: "Common - Node.js (asdf plugin)"
       shell: . /opt/asdf-vm/asdf.sh && asdf plugin add nodejs
       args:
