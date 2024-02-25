@@ -39,6 +39,12 @@ If caps2esc needs to be installed (transform caps lock into escape/ctrl):
 ansible-playbook -i hosts.yaml caps2esc.yaml -K
 ```
 
+If you're on a btrfs filesystem:
+
+```sh
+ansible-playbook -i hosts.yaml btrfs.yaml -K
+```
+
 ### Manual setup after install
 
 First, reboot.
