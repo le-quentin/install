@@ -52,7 +52,7 @@
       update: no
   - name: Manually create the initial virtualenv
     command:
-      cmd: python -m "{{ansible_env.HOME}}/perso/omnitheme/venv"
+      cmd: python -m venv "{{ansible_env.HOME}}/perso/omnitheme/venv"
       creates: "{{ansible_env.HOME}}/perso/omnitheme/venv"
   - name: "Home config - install omnitheme requirements"
     pip:
