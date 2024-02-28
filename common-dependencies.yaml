@@ -59,6 +59,10 @@
       shell: . /opt/asdf-vm/asdf.sh && asdf plugin add maven
       args:
         creates: "{{ ansible_env.HOME }}/.asdf/plugins/maven"
+    - name: "Common - oc (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add oc
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/oc"
     - name: "Common - Install all versions with asdf"
       shell: . /opt/asdf-vm/asdf.sh && asdf install
       args:
