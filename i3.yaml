@@ -30,6 +30,7 @@
           - polybar
           - pavucontrol 
           - pulseaudio 
+          - playerctl # CLI control for spotify integration in polybar 
           - xfce4-power-manager 
           - xfce4-battery-plugin
         state: present
