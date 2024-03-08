@@ -45,6 +45,16 @@ If you're on a btrfs filesystem:
 ansible-playbook -i hosts.yaml btrfs.yaml -K
 ```
 
+If you're on a Dell Precision laptop:
+
+```sh
+ansible-playbook -i dell-precision.yaml -K
+```
+
+Indeed, by default Dell laptops don't seem to have working dynamic fan speed in linux... Ideally I shoudl find a way to enable fan sensors so I can control the fans dynamically... [This seems to be the way](https://www.reddit.com/r/Dell/comments/9pdgid/configuring_the_xps_to_play_nice_with_linux/) (and then install fancontrol_gui or something similar), but I couldn't make it work so far.
+
+Until I find the best (dynamic) solution, this sets the fans to a better mode, which seems to mitigate the issue a *lot*.
+
 ### Manual setup after install
 
 First, reboot.
