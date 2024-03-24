@@ -1,0 +1,7 @@
+- name: "Archlinux - i3 extras"
+  become: yes
+  package:
+    name: 
+      - libxcursor
+      - conky-i3
+    state: present

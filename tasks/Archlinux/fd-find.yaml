@@ -1,0 +1,4 @@
+- name: "Archlinux - fd-find"
+  become: yes
+  package:
+    name: fd

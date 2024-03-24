@@ -1,0 +1,57 @@
+- name: Install i3 and related packages
+  hosts: work_machine
+  become: no
+  tasks:
+    - name: "i3 - core"
+      become: yes
+      package:
+        name: 
+          - i3-wm
+          - i3lock
+        state: present
+    - name: "i3 - System"
+      become: yes
+      package:
+        name: 
+          - conky
+        state: present
+    - name: "i3 - display"
+      become: yes
+      package:
+        name: 
+          - autorandr
+          - arandr
+          - picom
+        state: present
+    - name: "i3 - OS bar and applets"
+      become: yes
+      package:
+        name: 
+          - polybar
+          - pavucontrol 
+          - pulseaudio 
+          - playerctl # CLI control for spotify integration in polybar 
+          - xfce4-power-manager 
+          - xfce4-battery-plugin
+        state: present
+    - name: "i3 - Apps and utils"
+      become: yes
+      package:
+        name: 
+          - thunar
+          - rofi 
+          - redshift 
+          - flameshot 
+        state: present
+        # TODO install i3wsr
+- name: "i3 - OS specific i3 packages"
+  become: yes
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - polkit
+      - network-manager-applet
+      - volume-applet
+      - settings-manager
+      - display-manager # for greeting screen
+      - i3-extras

@@ -1,0 +1,6 @@
+- name: "Archlinux - network manager applet"
+  become: yes
+  package:
+    name: 
+      - network-manager-applet
+    state: present

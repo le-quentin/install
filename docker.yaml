@@ -1,0 +1,7 @@
+- name: "Docker - OS specific Docker installation"
+  become: no
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - docker
+    architecture: "{{ 'amd64' if ansible_architecture == 'x86_64' else ansible_architecture }}"

@@ -1,0 +1,6 @@
+- name: "Default - settings manager"
+  become: yes
+  package:
+    name: 
+      - xfce4-settings
+    state: present

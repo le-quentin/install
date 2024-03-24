@@ -1,0 +1,6 @@
+- name: "Home config (Archlinux) - fzf - install"
+  become: yes
+  package:
+    name:
+      - fzf
+    state: present

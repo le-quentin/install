@@ -1,0 +1,4 @@
+- name: "Archlinux - install chezmoi"
+  become: yes
+  package:
+    name: chezmoi

@@ -1,0 +1,74 @@
+- name: OS specific common packages
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - alacritty
+      - python
+      - asdf
+- name: Install common dependencies
+  hosts: work_machine
+  tasks:
+    - name: "Common - System"
+      become: yes
+      package:
+        name: 
+          - systemd # in case some stuff like machinectl is missing
+        state: present
+    - name: "Common - General dev/build deps"
+      become: yes
+      package:
+        name: 
+          - make
+          - cmake
+          - gcc
+        state: present
+    - name: "Common - Terminal Utilities"
+      become: yes
+      package:
+        name: 
+          - zsh
+          - tmux
+          - vim
+          - xsel
+        state: present
+    - name: "Common - File manager"
+      become: yes
+      package:
+        name: 
+          - thunar
+        state: present
+    - name: "Common - Timeshift"
+      become: yes
+      package:
+        name:
+          - timeshift
+        state: present
+    - name: "Common - Node.js (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add nodejs
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/nodejs"
+    - name: "Common - Java (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add java
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/java"
+    - name: "Common - Go (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add golang
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/golang"
+    - name: "Common - Maven (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add maven
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/maven"
+    - name: "Common - oc (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add oc
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/oc"
+    - name: "Common - Install all versions with asdf"
+      shell: . /opt/asdf-vm/asdf.sh && asdf install
+      args:
+        chdir: "{{ ansible_env.HOME }}/"
+        creates: "{{ ansible_env.HOME }}/.asdf/installs/java"
+
+
+
+

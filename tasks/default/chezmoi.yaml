@@ -1,0 +1,10 @@
+- name: "Default - install chezmoi - fetch"
+  shell: sh -c "$(curl -fsLS get.chezmoi.io)"
+  args:
+    chdir: /tmp/
+    creates: /usr/bin/chezmoi
+- name: "Default - install chezmoi - move"
+  become: yes
+  shell: mv /tmp/bin/chezmoi /usr/bin/chezmoi
+  args:
+    creates: /usr/bin/chezmoi

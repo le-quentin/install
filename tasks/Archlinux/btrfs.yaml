@@ -1,0 +1,4 @@
+- name: "Archlinux - btrfs"
+  yay:
+    name: btdu # file system maintenance, showing actual size of files and dirs in btrfs
+    state: present

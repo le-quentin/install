@@ -1,0 +1,22 @@
+# Utilities that are specific to btrfs filesystems
+- name: "btrfs utilities - OS specific packages"
+  become: yes
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - btrfs 
+- name: "btrfs utilies" 
+  hosts: work_machine
+  become: no
+  tasks:
+    - name: "btrfs utilities - installation"
+      become: yes
+      package:
+        name: 
+          - timeshift-autosnap # automatic timeshift snapshot before an update
+          - grub-btrfs # boot to btrfs subvolumes from grub (= timeshift snapshots)
+          - btrfsmaintenance # btrfs automatic maintenance tools
+        state: present
+    - name: "btrfs utilities - setup maintenance jobs crons"
+      become: yes
+      shell: /usr/share/btrfsmaintenance/btrfsmaintenance-refresh-cron.sh 

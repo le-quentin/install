@@ -1,0 +1,4 @@
+- name: "Archlinux - asdf"
+  yay:
+    name: asdf-vm
+    state: present

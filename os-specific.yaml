@@ -1,0 +1,23 @@
+# When importing this playbook, provide a "tasks" var containing a list of task names
+
+- name: Install os-specific dependencies
+  hosts: work_machine
+
+  # This is the common structure for specific tasks
+  # First, check the distribution (i.e. "Ubuntu") folder
+  # Then, check the os_family (i.e. "Debian") folder
+  # Finally, check default folder
+  vars:
+    task_files:
+      - "tasks/{{ansible_distribution}}/{{ item }}.yaml"
+      - "tasks/{{ansible_os_family}}/{{ item }}.yaml"
+      - "tasks/default/{{ item }}.yaml"
+
+  # This will use the common structure with the task file names as items
+  # Expects a file in at least one of the three distro/family/default folder
+  # Uses the "tasks" variable, which should be a list of task names (= file names without the trailing .yaml)
+  tasks:
+    - name: "Install OS-specific dependencies from tasks/ folder"
+      include_tasks: 
+        file: "{{ lookup('first_found', task_files) }}"
+      with_items: "{{ tasks }}"

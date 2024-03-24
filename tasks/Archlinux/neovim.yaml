@@ -1,0 +1,6 @@
+- name: "Neovim - Install"
+  become: yes
+  package:
+    name: 
+      - neovim
+    state: present

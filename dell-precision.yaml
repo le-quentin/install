@@ -1,0 +1,20 @@
+# Run this playbook on dell precision for some custom tweakings
+- name: Install Dell Precision specific stuff
+  hosts: work_machine
+  become: no
+  tasks:
+    - name: "Dell Precision - libsmbios (fan control)"
+      become: yes
+      package:
+        name: 
+          - libsmbios
+        state: present
+    - name: "Dell Precision - get fans mode to find out if it should be changed"
+      become: yes
+      shell: smbios-thermal-ctl --get-thermal-info | grep -i "Cool Bottom" | wc -l
+      register: fan_mode_found
+      changed_when: "false"
+    - name: "Dell Precision - set fans to \"cool-bottom\" mode (best results so far)"
+      become: yes
+      shell: smbios-thermal-ctl --set-thermal-mode cool-bottom
+      when: fan_mode_found.stdout == "0"
