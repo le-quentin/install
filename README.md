@@ -89,18 +89,14 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
 
-- [ ] Show btrfs unallocated space in polybar (this is the btrfs concept that is closest to "free space", this should never get too low)
+- [x] Show btrfs unallocated space in polybar (this is the btrfs concept that is closest to "free space", this should never get too low)
 - [ ] Configure backups on another partion, or even better another disk. Good tool: https://github.com/digint/btrbk
 - [ ] When I have a decent NAS, automatically backup there (btrbk seems to handle it just fine as well)
 - [ ] global ctrl+h/j/k/l send left/up/down/right with udevmon? 
-- [ ] rework theme scripts into a proper "omnitheme" project (Python? Rust? Go?), because this is becoming bigger than expected
+- [x] rework theme scripts into a proper "omnitheme" project (Python? Rust? Go?), because this is becoming bigger than expected
 - [x] pick better colours for tmux-powerline and experiment with a few themes
 - [x] themes parametered with primary/secondary colors? Look into design good practices
-- [ ] separate parameters for the bar so that it sticks out more? 
-- [ ] Add gtk2/gtk3 exports to the "omnitheme" project
-- [ ] IntelliJ exports? 
 - [ ] replace various git pulls with zipped sources so I get a reliable version of deps
-- [ ] clean up to keep only what I need 
 - [x] i3 proper dual screen handling (external is main screen, worskpaces dispatching on hdmi plug) => 1-5 on external, 6-8 on laptop screen
 - [x] replace dmenu with rofi (opening windows and desktop apps + add a kickass theme)
 - [x] notification applet with "do not disturb" mode => did it with a custom module, display left of the system tray
