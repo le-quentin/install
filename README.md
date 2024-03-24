@@ -85,37 +85,6 @@ If I want my Linux machine to be the same I need a plan. Current plan :
 * Leisure system: for leisure use, during trips etc, a Windows install 
     * Should take ~25% of disk, depending on size
 
-### Disney
-
-For my job at Disney, I have to use f5vpn. There is an AUR package, but it has proven to be unreliable after updates.
-
-There is a workaround script, which still requires `f5vpn` to work. But the AUR package relies on an unsupported dependency that takes AGES to build. Workaround is using another dependency:
-```sh
-yay -G f5vpn
-```
-
-This downloaded the pkg files. Go into the directory and modify the PKGBUILD, find the `depends=` line, and replace `qt5-webkit` with `python-pyqt5-webengine`. Then:
-```sh
-makepkg -si
-```
-
-Will install the package with this dependency. 
-
-Then, install the script:
-```sh
-git clone https://github.com/zrhoffman/svpn-login.git
-cd svpn-login
-./svpn-login.py --sessionid=<session-id> orlando-bsp.disney.com
-```
-
-To get the sessionid, just open the vpn virtual desk in a browser, and then run this javascript in the console:
-```javascript
-document.cookie.match(/MRHSession=(.*?); /)[1]
-```
-
-I should install the script in a proper location with these install scripts, and setup an alias for it.
-
-
 ## TODO
 
 Those will be a starting point, because of course I will adjust config along the way with what I find convenient or not.
