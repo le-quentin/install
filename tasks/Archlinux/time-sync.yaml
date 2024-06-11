@@ -1,0 +1,13 @@
+#This seems necessary on arch: my system clock was 30 seconds off, which caused some issues with JWT tokens forging...
+- name: "Archlinux - synchronise system clock - modify timesyncd.conf"
+  become: yes
+  copy:
+    src: ./resources/timesyncd.conf
+    dest: /etc/systemd/timesyncd.conf
+- name: "Archlinux - synchronise system clock - reload systemd daemon"
+  become: yes
+  ansible.builtin.systemd:
+    daemon_reload: true
+- name: "Archlinux - synchronise system clock - enable ntp time control"
+  become: yes
+  shell: "sudo timedatectl set-ntp off && sudo timedatectl set-ntp on" 

@@ -1,0 +1,5 @@
+- name: "System config - OS specific"
+  import_playbook: "./os-specific.yaml"
+  vars:
+    tasks:
+      - time-sync

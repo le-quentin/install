@@ -1,3 +1,4 @@
+- import_playbook: "./system-config.yaml"
 - import_playbook: "./home-config.yaml"
 - import_playbook: "./common-dependencies.yaml"
 - import_playbook: "./i3.yaml"
