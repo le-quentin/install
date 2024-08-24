@@ -3,3 +3,12 @@
   vars:
     tasks:
       - time-sync
+- name: "System config - SysRq key"
+  hosts: work_machine
+  become: yes
+  tasks:
+    - sysctl:
+        name: kernel.sysrq
+        value: 192
+        sysctl_file: /usr/lib/sysctl.d/99-sysrq.conf
+        reload: yes
