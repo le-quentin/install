@@ -29,7 +29,10 @@
         name: 
           - polybar
           - pavucontrol 
-          - pulseaudio 
+          - pipewire # Pipewire is the new audio server, the one I managed to make my bluetooth speaker work with
+          - pipewire-alsa
+          - pipewire-pulse
+          - pipewire-audio
           - playerctl # CLI control for spotify integration in polybar 
           - xfce4-power-manager 
           - xfce4-battery-plugin
