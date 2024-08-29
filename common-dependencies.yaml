@@ -63,6 +63,10 @@
       shell: . /opt/asdf-vm/asdf.sh && asdf plugin add oc
       args:
         creates: "{{ ansible_env.HOME }}/.asdf/plugins/oc"
+    - name: "Common - python (asdf plugin)"
+      shell: . /opt/asdf-vm/asdf.sh && asdf plugin add python
+      args:
+        creates: "{{ ansible_env.HOME }}/.asdf/plugins/python"
     - name: "Common - Install all versions with asdf"
       shell: . /opt/asdf-vm/asdf.sh && asdf install
       args:
