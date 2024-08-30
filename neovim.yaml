@@ -9,6 +9,14 @@
           - ripgrep
           - python-pynvim
         state: present
+- name: "Neovim - npm dependencies"
+  hosts: work_machine
+  become: yes
+  tasks:
+    - name: "Neovim - npm neovim"
+      shell: "npm -g install neovim"
+      args:
+        creates: "/lib/node_modules/neovim"
 - name: "Neovim - OS specific install"
   become: no
   import_playbook: "./os-specific.yaml"
