@@ -45,6 +45,38 @@
       version: 42f06c1
       dest: "{{ansible_env.HOME}}/.tmux-powerline"
       update: no
+  - name: Ensure tmux plugins folder exists
+    ansible.builtin.file:
+      path: "{{ ansible_env.HOME }}/.tmux/plugins"
+      state: directory
+      mode: '0755'
+      recurse: yes
+  - name: Ensure tmux manually managed plugins folder exists
+    ansible.builtin.file:
+      path: "{{ ansible_env.HOME }}/.config/tmux/plugins"
+      state: directory
+      mode: '0755'
+      recurse: yes
+  - name: "Home config - tpm (tmux plugins manager)"
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      depth: 1
+      version: 99469c4
+      dest: "{{ansible_env.HOME}}/.tmux/plugins/tpm"
+      update: no
+  - name: "Home config - catppuccin-tmux (zenful theme)"
+    git:
+      repo: https://github.com/catppuccin/tmux.git
+      depth: 1
+      version: d645852
+      dest: "{{ansible_env.HOME}}/.config/tmux/plugins/catppuccin"
+      update: no
+  - name: "Home config - tmux-reset (to get truly self-contained config)"
+    shell: sh -c "$(curl -Lo ~/.config/tmux/plugins/tmux-reset/reset --create-dirs https://raw.githubusercontent.com/hallazzang/tmux-reset/3.0/tmux-reset)" "" "--unattended"
+    args:
+      creates: "{{ ansible_env.HOME }}/.config/tmux/plugins/tmux-reset/reset"
+  - name: "Install tmux plugins"
+    command: ~/.tmux/plugins/tpm/bin/install_plugins
   - name: "Home config - pull omnitheme"
     git:
       repo: git@github.com:le-quentin/omnitheme
