@@ -2,5 +2,5 @@
   become: yes
   package:
     name: 
-      - volumeicon
+      - volctl
     state: present
