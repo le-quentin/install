@@ -8,6 +8,7 @@
         name: 
           - i3-wm
           - i3lock
+          - xss-lock # locks screen on idle/suspend/manual trigger, replaces xautolock
         state: present
     - name: "i3 - System"
       become: yes
